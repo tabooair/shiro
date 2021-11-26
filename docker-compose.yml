@@ -1,0 +1,11 @@
+version: '2'
+services:
+  web:
+    container_name: rememberme
+    image: adoptopenjdk/openjdk12
+    volumes:
+      - ./spring-boot-23-shiro-remember-0.0.1-SNAPSHOT.jar:/spring-boot-23-shiro-remember-0.0.1-SNAPSHOT.jar
+      - ./flag.txt:/flag.txt:ro
+    ports: 
+    - "8081:8081"
+    entrypoint: java -jar spring-boot-23-shiro-remember-0.0.1-SNAPSHOT.jar
